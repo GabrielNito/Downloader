@@ -35,7 +35,7 @@ const Form = () => {
     <>
       <section
         id="url"
-        className="flex justify-center items-center mt-10 flex-col px-80 gap-4"
+        className="flex justify-center items-center mt-10 flex-col gap-4 w-[50%] relative left-[50%] translate-x-[-50%]"
       >
         <Input
           type="text"
@@ -43,7 +43,9 @@ const Form = () => {
           placeholder="Paste the URL here"
           className="text-white"
         />
-        <Button onClick={handleDownload}>Download</Button>
+        <Button variant="secondary" onClick={handleDownload}>
+          Download
+        </Button>
         <div id="message" />
       </section>
 

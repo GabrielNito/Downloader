@@ -24,12 +24,9 @@ const Results = ({ videoInfo }: ResultsProps) => {
         className="flex flex-col gap-4 justify-center items-center"
       >
         <h1 className="font-bold text-3xl">{videoInfo.title}</h1>
-        <img
-          src={videoInfo.thumbnail}
-          alt={videoInfo.title}
-          id="thumbnail"
-          className="aspect-video w-[30%] object-cover py-4"
-        />
+        <div className="results_image aspect-video w-[30%] object-cover rounded-xl overflow-hidden flex justify-center items-center">
+          <img src={videoInfo.thumbnail} alt={videoInfo.title} id="thumbnail" />
+        </div>
         <Tabs defaultValue="video" className="w-[40%] mb-20">
           <TabsList className="grid w-full gap-4 grid-cols-2">
             <TabsTrigger value="video">Video</TabsTrigger>

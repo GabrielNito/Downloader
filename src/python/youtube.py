@@ -33,7 +33,7 @@ def list_resolutions():
             "success": True,
             "video_streams": video_streams,
             "thumbnail": yt.thumbnail_url,
-            "title": yt.streams[0].title
+            "title": yt.title
         })
 
     except Exception as e:

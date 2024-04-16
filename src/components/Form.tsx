@@ -13,11 +13,20 @@ const Form = () => {
   const { toast } = useToast();
 
   const handleDownload = async () => {
+    const input = document.getElementById("url_input") as HTMLInputElement;
+    if (!input.value) {
+      toast({
+        variant: "destructive",
+        title: "Invalid URL",
+        description: "Please, insert a valid URL",
+      });
+      return;
+    }
     toast({
       title: "Vídeo download started",
       description: "Your vídeo will be soon ready for download",
     });
-    const result = await youtube_list();
+    const result = await youtube_list(input?.value);
     setVideoInfo(result);
     setShow(true);
   };

@@ -1,15 +1,4 @@
-export async function youtube_list() {
-  const a = document.getElementById("url_input") as HTMLInputElement;
-  const url = a?.value;
-  const messageDiv = document.getElementById("message");
-
-  if (!url) {
-    if (messageDiv) {
-      messageDiv.textContent = "Please enter a valid URL";
-    }
-    return;
-  }
-
+export async function youtube_list(url: any) {
   try {
     const response = await fetch("http://localhost:5000/youtube-list", {
       method: "POST",
@@ -19,9 +8,7 @@ export async function youtube_list() {
       body: JSON.stringify({ url }),
     });
 
-    const data = await response.json();
-
-    return data;
+    return await response.json();
   } catch (error: any) {
     return error;
   }

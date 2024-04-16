@@ -30,7 +30,7 @@ const Results = ({ videoInfo }: ResultsProps) => {
           id="thumbnail"
           className="aspect-video w-[30%] object-cover py-4"
         />
-        <Tabs defaultValue="video" className="w-[40%]">
+        <Tabs defaultValue="video" className="w-[40%] mb-20">
           <TabsList className="grid w-full gap-4 grid-cols-2">
             <TabsTrigger value="video">Video</TabsTrigger>
             <TabsTrigger value="audio">Audio</TabsTrigger>

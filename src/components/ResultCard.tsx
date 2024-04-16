@@ -11,17 +11,17 @@ const ResultCard = ({ videoInfo }: ResultCardListProps) => {
       {videoInfo.video_streams.map((video: any, index: number) => {
         return (
           <div
-            className="result_card_item flex flex-row gap-8 items-center justify-center border rounded-xl py-4 w-full"
+            className="result_card_item flex flex-row gap-8 items-center justify-center border rounded-xl py-4 w-full bg-muted"
             key={index}
           >
             <a href={video.url} target="_blank">
               <Button className="w-fit">
                 <p>Download</p>
-                <ArrowUpRight className="ml-1 w-5 text-background" />
+                <ArrowUpRight className="ml-1 w-5" />
               </Button>
             </a>
-            <h1 className="text-xl tracking-wide">{`Resolution: ${video.resolution}`}</h1>
-            <h1 className="text-xl tracking-wide">{`FPS: ${video.fps}`}</h1>
+            <h1 className="tracking-wide">{`Resolution: ${video.resolution}`}</h1>
+            <h1 className="tracking-wide">{`FPS: ${video.fps}`}</h1>
           </div>
         );
       })}
